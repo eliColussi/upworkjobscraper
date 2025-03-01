@@ -1,101 +1,109 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-gradient-to-br from-base-100 to-base-200">
+      {/* Navigation */}
+      <nav className="navbar bg-base-100/80 backdrop-blur-md fixed top-0 z-50 shadow-sm px-4 lg:px-8">
+        <div className="navbar-start">
+          <Link 
+            href="/" 
+            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            UpWork Scraper
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="navbar-end gap-3">
+          <Link 
+            href="/login" 
+            className="btn btn-ghost btn-sm normal-case text-base hover:bg-base-200/50"
+          >
+            Login
+          </Link>
+          <Link 
+            href="/signup" 
+            className="btn btn-primary btn-sm normal-case text-base shadow-md hover:shadow-lg transition-shadow"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 lg:px-8 pt-16">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 backdrop-blur-3xl"></div>
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
+            Apply to Upwork Jobs 10x Faster
+          </h1>
+          <p className="text-lg md:text-xl mb-12 text-base-content/80 max-w-3xl mx-auto leading-relaxed">
+            Stop refreshing Upwork manually. Our smart scraper finds the perfect jobs for you and lets you apply with just one click. Save time, apply more, earn more.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              href="/signup" 
+              className="btn btn-primary btn-lg normal-case text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 px-8"
+            >
+              Start Scraping Free
+            </Link>
+            <Link 
+              href="#features" 
+              className="btn btn-ghost btn-lg normal-case text-lg hover:bg-base-200/50"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-24 bg-base-100">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Why Use Our Job Scraper?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="card bg-base-200/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-base-300">
+              <div className="card-body">
+                <h3 className="card-title text-xl font-bold text-primary mb-4">Real-time Job Alerts</h3>
+                <p className="text-base-content/80 leading-relaxed">Get notified instantly when new jobs matching your skills are posted. Never miss an opportunity again.</p>
+              </div>
+            </div>
+            <div className="card bg-base-200/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-base-300">
+              <div className="card-body">
+                <h3 className="card-title text-xl font-bold text-secondary mb-4">One-Click Apply</h3>
+                <p className="text-base-content/80 leading-relaxed">Save time with instant access to job URLs. Apply to more jobs in less time and increase your chances of success.</p>
+              </div>
+            </div>
+            <div className="card bg-base-200/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-base-300">
+              <div className="card-body">
+                <h3 className="card-title text-xl font-bold text-accent mb-4">Smart Filtering</h3>
+                <p className="text-base-content/80 leading-relaxed">Our AI helps you find the most relevant jobs based on your skills and preferences. Focus on what matters.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto text-center px-4 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Ready to Supercharge Your Job Search?
+          </h2>
+          <p className="text-lg md:text-xl mb-12 text-base-content/80 max-w-3xl mx-auto leading-relaxed">
+            Join thousands of freelancers who are already using our tool to find and apply to the best Upwork jobs faster.
+          </p>
+          <Link 
+            href="/signup" 
+            className="btn btn-primary btn-lg normal-case text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 px-12"
+          >
+            Get Started Free
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
