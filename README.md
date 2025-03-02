@@ -1,8 +1,25 @@
+# Next.js Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, set up your environment variables.
+
+### Environment Variables
+
+This project requires a `.env.local` file to store API keys and other sensitive credentials. Create a `.env.local` file in the root directory and add your keys:
+
+```ini
+NEXT_PUBLIC_SUPABASE_URL=your_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key_here
+APIFY_API_TOKEN=your_token_here
+
+```
+
+Make sure to replace `your_api_key_here` and `your_secret_here` with your actual keys.
+
+Then, run the development server:
 
 ```bash
 npm run dev
